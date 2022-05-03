@@ -1,12 +1,12 @@
 name: Create issue on commit
 
-on: [ push ]
+on: [push]
 
 jobs:
   create_issue:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     permissions:
-      issues: write 
+      issues: write
     steps:
       - name: Create issue using REST API
         run: |
@@ -33,4 +33,7 @@ jobs:
           git pull
           ls -alh
           echo $RANDOM > random.txt
+          git add .
+          git commit -m "add random file"
+          git push
           ls -alh
