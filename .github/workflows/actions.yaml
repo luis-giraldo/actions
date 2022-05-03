@@ -5,7 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ls pwd
-        run: ls && pwd
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"
+          #git clone git@github/:$GITHUB_REPOSITORY
+          #git checkout $GITHUB_SHA
       - name: simple js actions
         id: greet
         uses: actions/hello-world-javascript-action@v1.1 #can also be a branch or commit\
