@@ -1,7 +1,22 @@
 name: actions workflow
 on:
-  repository_dispatch:
-    types: [build]
+  push:
+    branches:
+      - "main"
+      - "feature/*"
+      - "feature/**"
+      - "!ignorebranch"
+    tags:
+      - "v1.*"
+      - "!ignoretag"
+    paths:
+      - "**.js"
+#    branches-ignore:
+#      - ""
+  #pull_request:
+
+  #repository_dispatch:
+  #  types: [build]
 
   #push:
   #  schedule:
