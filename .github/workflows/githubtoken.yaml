@@ -35,5 +35,5 @@ jobs:
           echo $RANDOM > random.txt
           git add .
           git commit -m "add random file"
-          #git push
+          git push -v
           ls -alh
