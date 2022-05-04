@@ -8,11 +8,12 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node-version: [6, 8, 10]
-        include:
-          - os: ubuntu-latest
-            node-version: 8
-            is_ubuntu_8 = "true"          
-        exclude: 
+        #  include:
+        #     - is_ubuntu_8 = "true"
+        #       os: ubuntu-latest
+        #       node-version: 8
+
+        exclude:
           - os: ubuntu-latest
             node-version: 6
           - os: macos-latest
@@ -20,8 +21,7 @@ jobs:
 
       max-parallel: 3
     runs-on: ${{matrix.os}}
-    env:
-      IS_UBNTU_8 = ${{matrix.is_ubuntu_8}}
+    #env: IS_UBNTU_8 = ${{matrix.is_ubuntu_8}}
     steps:
       - name: display node version
         run: node -v
