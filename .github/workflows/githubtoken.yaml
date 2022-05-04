@@ -1,7 +1,13 @@
 name: Create issue on commit
 
-on: [push]
-
+#on: push
+on:
+  pull_request:
+    types:
+      - closed
+      - assigned
+      - opened
+      - reopened
 jobs:
   create_issue:
     runs-on: ubuntu-latest
