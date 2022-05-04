@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: post a user
         run: |
-          curl -X POST http://localhost:3000/api/user -H 'Content-Type: application/json' -d '{"username": "hello","address": "dwded"}'
+          curl -X POST http://localhost:3000/api/user -H 'Content-Type: application/json' -d '{"username": "luis","address": "medellin"}'
       - name: get user
         run: |
           curl  http://localhost:3000/api/users
