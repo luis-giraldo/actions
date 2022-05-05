@@ -1,0 +1,17 @@
+name: containers
+on: push
+
+jobs:
+  containers:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10
+    steps:
+      - name: log node v
+        run: |
+          node -v
+      - name: step with container
+        uses: docker://node:18-alpine
+        with:
+          entrypoint: "/bin/echo"
+          args: "hello world from alpine"
