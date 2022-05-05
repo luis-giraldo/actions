@@ -13,5 +13,5 @@ jobs:
       - name: step with container
         uses: docker://node:18-alpine
         with:
-          entrypoint: "/bin/echo"
-          args: "hello world from alpine"
+          entrypoint: /usr/local/bin/node
+          args: -v
